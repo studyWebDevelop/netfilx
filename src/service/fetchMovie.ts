@@ -15,4 +15,9 @@ const movieDetails = async (id: number) => {
   return response.data;
 };
 
-export { movieNowPlaying, movieDetails };
+const movieRow = async (url: string) => {
+  const response = await httpRequest.get(url);
+  return response.data.results;
+};
+
+export { movieNowPlaying, movieDetails, movieRow };
