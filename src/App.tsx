@@ -1,3 +1,4 @@
+import Footer from "./common/components/Footer";
 import Header from "./common/components/Header";
 import MovieRow from "./common/components/MovieRow";
 import Banner from "./components/Banner";
@@ -14,6 +15,7 @@ const App = () => {
           <MovieRow key={row.id} {...row} />
         ))}
       </div>
+      <Footer />
     </TanStackQueryClientProvider>
   );
 };
