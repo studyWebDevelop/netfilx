@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { createQueryKeys } from "@lukemorales/query-key-factory";
 import { movieDetails, movieNowPlaying } from "../../../service/fetchMovie";
+import { useState } from "react";
 
 const queryKey = createQueryKeys("movie", {
   // query key를 movie로 그룹화 할 수 있음
@@ -31,4 +32,16 @@ const useMoviePlayingOne = () => {
   });
 };
 
-export { usePlayingNowMovie, useMoviePlayingOne };
+const useBanner = () => {
+  const [isClick, setIsClick] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
+  const handlePlayMovie = (movieData: any) => {
+    setIsClick(true);
+    setSelectedMovie(movieData.videos);
+  };
+
+  return { isClick, selectedMovie, handlePlayMovie };
+};
+
+export { usePlayingNowMovie, useMoviePlayingOne, useBanner };

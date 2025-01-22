@@ -1,11 +1,23 @@
-import { useMoviePlayingOne } from "./hooks/useBanner";
+import { useBanner, useMoviePlayingOne } from "./hooks/useBanner";
+import DefaultBanner from "./components/DefaultBanner";
+import PlayingMovieBanner from "./components/PlayMovieBanner";
 
 const Banner = () => {
-  const { data } = useMoviePlayingOne();
+  const { isClick, selectedMovie, handlePlayMovie } = useBanner();
+  const { data: movieOne } = useMoviePlayingOne();
 
-  console.log(data);
-
-  return <div></div>;
+  return (
+    <>
+      {isClick && selectedMovie ? (
+        <PlayingMovieBanner {...(selectedMovie as any)} />
+      ) : (
+        <DefaultBanner
+          {...movieOne}
+          handlePlayMovie={() => handlePlayMovie(movieOne)}
+        />
+      )}
+    </>
+  );
 };
 
 export default Banner;

@@ -7,7 +7,11 @@ const movieNowPlaying = async () => {
 };
 
 const movieDetails = async (id: number) => {
-  const response = await httpRequest.get(`/movie/${id}`);
+  const response = await httpRequest.get(`/movie/${id}`, {
+    params: {
+      append_to_response: "videos",
+    },
+  });
   return response.data;
 };
 

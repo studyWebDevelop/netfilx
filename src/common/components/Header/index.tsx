@@ -6,7 +6,6 @@ import clsx from "clsx";
 const Header = () => {
   const { isShow } = useHeader();
 
-  console.log(isShow);
   return (
     <header className={clsx(isShow && st.background)}>
       <img
