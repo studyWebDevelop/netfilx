@@ -21,6 +21,22 @@ header {
     left: 30px;
   }
 
+  .searchInput {
+    min-width: 250px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    border: none;
+
+    &:focus {
+      outline: 1px solid gray;
+    }
+  }
+
   .avatar {
     position: fixed;
     width: 30px;

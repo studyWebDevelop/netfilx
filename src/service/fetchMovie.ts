@@ -20,4 +20,12 @@ const movieRow = async (url: string) => {
   return response.data.results;
 };
 
-export { movieNowPlaying, movieDetails, movieRow };
+const searchMovie = async (query: string) => {
+  const response = await httpRequest(
+    `/search/multi?include_adult=false&query=${query}`
+  );
+
+  return response.data.results;
+};
+
+export { movieNowPlaying, movieDetails, movieRow, searchMovie };
