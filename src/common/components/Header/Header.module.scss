@@ -9,6 +9,7 @@ header {
   justify-content: space-between;
   align-items: center;
   transition: all 0.5s ease-in-out;
+  cursor: pointer;
 
   &.background {
     background-color: #111;

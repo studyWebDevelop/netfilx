@@ -3,7 +3,7 @@ import type { ISearchMovieDetail } from "./interface/SearchMovieDetail.interface
 import st from "./SearchMovie.module.scss";
 
 const SearchMovie = () => {
-  const { keyword } = useSearchMovie();
+  const { keyword, handleNavigateDetailPage } = useSearchMovie();
   const { data: searchResults } = useSearchMovieData(String(keyword));
 
   return (
@@ -16,11 +16,12 @@ const SearchMovie = () => {
                 "https://image.tmdb.org/t/p/w500" + movie.backdrop_path;
 
               return (
-                <div className={st.movieDetailWrapper}>
+                <div key={movie.id} className={st.movieDetailWrapper}>
                   <div className={st.moviePosterWrapper}>
                     <img
                       className={st.moviePoster}
                       src={movieImageUrl}
+                      onClick={() => handleNavigateDetailPage(movie.id)}
                       alt="poster"
                     />
                   </div>

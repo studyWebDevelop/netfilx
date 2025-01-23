@@ -25,7 +25,7 @@ const MovieDetail = ({
         X
       </span>
       <img
-        className={st.modalPosterImg}
+        className={st.modalPosterImage}
         src={`https://image.tmdb.org/t/p/original/${backdrop_path}`}
         alt="poster"
       />
@@ -37,7 +37,7 @@ const MovieDetail = ({
 
         <h2 className={st.title}>{title ? title : name}</h2>
         <p className={st.rate}>
-          평점 <span>{vote_average}</span>
+          평점 <span>{Number(vote_average).toFixed(1)}</span>
         </p>
         <p className={st.overview}>{overview}</p>
       </div>

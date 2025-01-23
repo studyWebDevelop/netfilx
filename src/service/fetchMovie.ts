@@ -28,4 +28,9 @@ const searchMovie = async (query: string) => {
   return response.data.results;
 };
 
-export { movieNowPlaying, movieDetails, movieRow, searchMovie };
+const movieDetail = async (id: number) => {
+  const response = await httpRequest.get(`/movie/${id}`);
+  return response.data;
+};
+
+export { movieNowPlaying, movieDetails, movieRow, searchMovie, movieDetail };

@@ -1,6 +1,6 @@
 import { createQueryKeys } from "@lukemorales/query-key-factory";
 import { useQuery } from "@tanstack/react-query";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { searchMovie } from "../../../service/fetchMovie";
 import useDebounce from "../../../common/hooks/useDebounce";
 
@@ -16,14 +16,16 @@ const useSearchMovieData = (query: string) => {
 };
 
 const useSearchMovie = () => {
-  const getQueryKeyword = () => {
-    return new URLSearchParams(useLocation().search);
-  };
+  const navigate = useNavigate();
 
-  const query = getQueryKeyword();
+  const query = new URLSearchParams(useLocation().search);
   const keyword = useDebounce(String(query.get("q")), 500);
 
-  return { keyword };
+  const handleNavigateDetailPage = (movieId: number) => {
+    navigate(`/${movieId}`);
+  };
+
+  return { keyword, handleNavigateDetailPage };
 };
 
 export { useSearchMovieData, useSearchMovie };

@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  min-height: calc(50dvh - 70px);
+
+  .posterImage {
+    width: 100%;
+    height: auto;
+    background-color: rgb(78, 78, 78);
+    min-height: 375px;
+  }
+}
