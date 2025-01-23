@@ -1,7 +1,9 @@
 import clsx from "clsx";
-import { useMovieRow } from "./hooks/useMovieRow";
+import { useMovieOne, useMovieRow } from "./hooks/useMovieRow";
 import st from "./MovieRow.module.scss";
 import { scrollY } from "./utils";
+import ModalPortal from "../../helpers/ModalPortal";
+import MovieDetail from "../MovieDetail";
 
 interface IMovieRow {
   id: string;
@@ -12,6 +14,13 @@ interface IMovieRow {
 
 const MovieRow = ({ id, title, fetchUrl, isLargeRow }: IMovieRow) => {
   const { data: movies } = useMovieRow(fetchUrl);
+  const {
+    isModalOpen,
+    handleOpenModal,
+    setIsModalOpen,
+    movieDetailData,
+    setMovieDetailData,
+  } = useMovieOne();
 
   return (
     <section className={st.container}>
@@ -24,6 +33,10 @@ const MovieRow = ({ id, title, fetchUrl, isLargeRow }: IMovieRow) => {
           {movies?.map((movie: any) => (
             <img
               key={movie.id}
+              onClick={() => {
+                handleOpenModal();
+                setMovieDetailData(movie);
+              }}
               className={clsx(
                 st.moviePoster,
                 isLargeRow && st.movieLargePoster
@@ -42,6 +55,12 @@ const MovieRow = ({ id, title, fetchUrl, isLargeRow }: IMovieRow) => {
           {">"}
         </div>
       </div>
+
+      {isModalOpen && (
+        <ModalPortal>
+          <MovieDetail setIsModalOpen={setIsModalOpen} {...movieDetailData} />
+        </ModalPortal>
+      )}
     </section>
   );
 };
