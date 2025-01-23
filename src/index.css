@@ -126,3 +126,31 @@ table {
 button {
   border: none;
 }
+
+.swiper-pagination-bullet-active {
+  background: white !important;
+}
+
+.swiper-button-prev {
+  color: white !important;
+}
+
+.swiper-button-next {
+  color: white !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #fff !important;
+  opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}

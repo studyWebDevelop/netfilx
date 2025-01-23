@@ -4,10 +4,7 @@ import { useDetailMovie } from "./hooks/useDetailMovie";
 
 const DetailMovie = () => {
   const { movieId } = useParams();
-
   const { data: detailMovie, isLoading } = useDetailMovie(Number(movieId));
-
-  console.log(detailMovie);
 
   return (
     <section className={st.container}>
