@@ -1,50 +1,15 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 장르별 영화 조회 기능
+![스크린샷 2025-01-24 오전 1 37 26](https://github.com/user-attachments/assets/b7d6fb47-79b2-4982-b02b-5932a32f450a)
 
-Currently, two official plugins are available:
+### 영화 상세보기 기능
+![스크린샷 2025-01-24 오전 1 38 03](https://github.com/user-attachments/assets/6cf256d0-5014-4e65-bcd9-3138afbf6dff)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 영화 검색 기능
+![스크린샷 2025-01-24 오전 1 37 03](https://github.com/user-attachments/assets/422cb7f6-0e66-45d2-8fce-b178d68fc73b)
 
-## Expanding the ESLint configuration
+### 재생 버튼 클릭시 미리보기 기능
+![스크린샷 2025-01-24 오전 1 37 47](https://github.com/user-attachments/assets/072a87c1-13ab-4059-ac18-3969edb4fbd4)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+<따라하며 배우는 리액트 A-Z> 강의를 보면서 코드를 제 입맛에 맛게 수정하였습니다.
